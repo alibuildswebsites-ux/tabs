@@ -37,16 +37,16 @@ export function AboutStory() {
   }, [])
 
   return (
-    <section className="py-24 px-6 bg-ghostly-gray">
+    <section className="py-16 md:py-24 px-6 bg-ghostly-gray">
       <div className="max-w-7xl mx-auto" ref={sectionRef}>
         <SectionLabel number={1} label="Our Story" />
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-start">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-start mt-8">
           <div data-story-item>
-            <h2 className="text-[28px] md:text-[40px] font-medium text-midnight-ink leading-snug">
+            <h2 className="text-heading-sm md:text-heading font-medium text-midnight-ink leading-heading tracking-heading">
               We Started Because Growing Businesses Deserved Better
             </h2>
           </div>
-          <div data-story-item className="flex flex-col gap-5 text-muted-stone text-base leading-relaxed">
+          <div data-story-item className="flex flex-col gap-5 text-muted-stone text-body leading-body tracking-body">
             <p>
               Tabs Consultants was founded in 2017 with a straightforward belief: businesses at
               every stage deserve access to expert financial guidance — not just the ones large

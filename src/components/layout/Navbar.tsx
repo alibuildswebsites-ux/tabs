@@ -64,7 +64,7 @@ export function Navbar() {
           </Link>
           <Link
             href="/contact"
-            className="inline-flex items-center justify-center bg-leafy-green text-black text-[15px] font-medium px-5 py-2.5 rounded-[12px] hover:bg-[#85d9ae] active:bg-[#5cb88a] transition-colors duration-150 select-none"
+            className="inline-flex items-center justify-center bg-sunbeam-yellow text-black text-[15px] font-medium px-5 py-2.5 rounded-[12px] hover:bg-[#ffe999] active:bg-[#ffd94e] transition-colors duration-150 select-none"
           >
             Get Started
           </Link>

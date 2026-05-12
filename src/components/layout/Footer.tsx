@@ -33,7 +33,7 @@ export function Footer() {
               Remote-first financial consulting for construction, real estate, startups, and
               growing enterprises.
             </p>
-            <p className="text-[13px] text-black/35">Founded 2017 · USA</p>
+            <address className="not-italic text-[13px] text-black/35">Founded 2017 · USA</address>
           </div>
 
           {/* Services col 1 */}
@@ -94,6 +94,7 @@ export function Footer() {
             <div className="mt-2 flex flex-col gap-1">
               <a
                 href="mailto:hello@tabsconsultants.com"
+                aria-label="Email Tabs Consultants"
                 className="text-[14px] text-black/60 hover:text-black transition-colors duration-150"
               >
                 hello@tabsconsultants.com

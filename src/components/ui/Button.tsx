@@ -22,7 +22,7 @@ const variantClasses: Record<Variant, string> = {
   secondary:
     'bg-leafy-green text-midnight-ink hover:bg-[#85d9ae] active:bg-[#5cb98a]',
   outline:
-    'bg-transparent border border-midnight-ink text-midnight-ink hover:bg-midnight-ink hover:text-white',
+    'bg-transparent border border-midnight-ink/20 text-midnight-ink hover:bg-black/[0.04] active:bg-black/[0.08]',
 }
 
 const sizeClasses: Record<Size, string> = {

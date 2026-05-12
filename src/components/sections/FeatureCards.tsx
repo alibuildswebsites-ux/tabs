@@ -25,7 +25,7 @@ const features = [
   },
   {
     icon: Shield,
-    color: 'bg-orange',
+    color: 'bg-sunbeam-yellow',
     title: 'Compliance Without Stress',
     body: 'We stay on top of regulatory changes, filing deadlines, and audit requirements — so you never have to worry about what you might be missing.',
   },
@@ -43,7 +43,7 @@ const features = [
   },
   {
     icon: Globe,
-    color: 'bg-orange',
+    color: 'bg-sunbeam-yellow',
     title: 'Industry Expertise That Applies',
     body: 'Construction job costing. Real estate portfolio analysis. Startup runway modeling. We speak your industry\'s financial language.',
   },
@@ -85,9 +85,9 @@ export function FeatureCards() {
   return (
     <section
       ref={sectionRef}
-      className="py-32 px-8 bg-beige border-t border-black/[0.06]"
+      className="py-16 md:py-24 px-8 bg-beige border-t border-black/[0.06]"
     >
-      <div className="max-w-[1280px] mx-auto flex flex-col gap-16">
+      <div className="max-w-[1280px] mx-auto flex flex-col gap-12">
         {/* Section header */}
         <div className="flex flex-col md:flex-row md:items-end gap-6 md:justify-between">
           <div className="flex flex-col gap-4 max-w-xl">
@@ -96,11 +96,11 @@ export function FeatureCards() {
               <span className="w-4 h-px bg-black/20 inline-block" />
               <span>GOOD COMPANY</span>
             </div>
-            <h2 className="text-[40px] md:text-[52px] font-medium text-black leading-[1.1] tracking-[-1px]">
+            <h2 className="text-heading-sm md:text-heading font-medium text-midnight-ink leading-heading tracking-heading">
               Everything You Need, Nothing You Don&apos;t
             </h2>
           </div>
-          <p className="text-[17px] text-black/55 leading-[1.6] max-w-sm md:text-right">
+          <p className="text-body text-muted-stone leading-body tracking-body max-w-sm md:text-right">
             Purpose-built for growing businesses that want expert financial partnership — without the overhead.
           </p>
         </div>

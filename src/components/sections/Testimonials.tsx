@@ -24,7 +24,7 @@ const testimonials = [
     name: 'James R.',
     role: 'Director of Operations, Summit Enterprises',
     initials: 'JR',
-    color: 'bg-orange',
+    color: 'bg-sunbeam-yellow',
   },
   {
     text: 'As a real estate investor with a complex portfolio, I needed someone who actually understood the numbers. Tabs gets it — they speak my language and make reporting effortless.',
@@ -45,7 +45,7 @@ const testimonials = [
     name: 'Rachel L.',
     role: 'COO, Cornerstone Group',
     initials: 'RL',
-    color: 'bg-orange',
+    color: 'bg-sunbeam-yellow',
   },
   {
     text: 'We switched from a big regional firm to Tabs and the difference is night and day. Responsive, proactive, and they actually understand our construction business.',
@@ -66,7 +66,7 @@ const testimonials = [
     name: 'Kevin B.',
     role: 'CEO, GreenPath Startups',
     initials: 'KB',
-    color: 'bg-orange',
+    color: 'bg-sunbeam-yellow',
   },
 ]
 
@@ -133,8 +133,8 @@ const TestimonialsColumn = ({
 /* ── Main section export ── */
 export function Testimonials() {
   return (
-    <section className="py-32 px-8 border-t border-black/[0.06] overflow-hidden">
-      <div className="max-w-[1280px] mx-auto flex flex-col gap-16">
+    <section className="py-16 md:py-24 px-8 border-t border-black/[0.06] overflow-hidden">
+      <div className="max-w-[1280px] mx-auto flex flex-col gap-12">
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
           <div className="flex flex-col gap-4">
@@ -143,11 +143,11 @@ export function Testimonials() {
               <span className="w-4 h-px bg-black/20 inline-block" />
               <span>HAPPY CLIENTS</span>
             </div>
-            <h2 className="text-[40px] md:text-[52px] font-medium text-black leading-[1.1] tracking-[-1px]">
+            <h2 className="text-heading-sm md:text-heading font-medium text-midnight-ink leading-heading tracking-heading">
               Businesses That Trusted the Numbers
             </h2>
           </div>
-          <p className="text-[16px] text-black/50 max-w-xs md:text-right leading-relaxed">
+          <p className="text-body text-muted-stone max-w-xs md:text-right leading-body tracking-body">
             200+ businesses have made smarter financial decisions with Tabs by their side.
           </p>
         </div>
