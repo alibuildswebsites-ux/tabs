@@ -1,58 +1,36 @@
 @import "tailwindcss";
 
 @theme {
-  /* Colors */
+  /* ── Exact Pirsch.io color palette ── */
   --color-midnight-ink: #000000;
   --color-canvas: #ffffff;
+  --color-beige: #f8f5ed;
   --color-ghostly-gray: #f8f5ed;
   --color-muted-stone: #707070;
   --color-sunbeam-yellow: #ffda6e;
   --color-leafy-green: #6ece9d;
+  --color-orange: #f7a66b;
+  --color-red-soft: #e87b7b;
 
-  /* Typography */
-  --font-dm-sans: 'DM Sans', ui-sans-serif, system-ui, -apple-system,
-    BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  /* Typography — DM Sans only */
+  --font-dm-sans: 'DM Sans', Roboto, -apple-system, system-ui, BlinkMacSystemFont,
+    'Segoe UI', Helvetica, Arial, sans-serif;
 
-  /* Type scale */
-  --text-body: 16px;
-  --leading-body: 1.5;
-  --tracking-body: -0.016px;
-
-  --text-body-lg: 18px;
-  --leading-body-lg: 1.5;
-  --tracking-body-lg: -0.016px;
-
-  --text-subheading: 20px;
-  --leading-subheading: 1.25;
-  --tracking-subheading: -0.016px;
-
-  --text-heading-sm: 24px;
-  --leading-heading-sm: 1.25;
-  --tracking-heading-sm: -0.016px;
-
-  --text-heading: 28px;
-  --leading-heading: 1.25;
-  --tracking-heading: -0.016px;
-
-  --text-display: 64px;
-  --leading-display: 1.25;
-  --tracking-display: -0.016px;
-
-  /* Spacing */
-  --spacing-8: 8px;
-  --spacing-16: 16px;
-  --spacing-24: 24px;
-  --spacing-32: 32px;
-  --spacing-48: 48px;
-  --spacing-64: 64px;
-  --spacing-128: 128px;
-  --spacing-192: 192px;
-
-  /* Border radius */
+  /* Border radius — exact Pirsch values */
+  --radius-small: 6px;
+  --radius-medium: 12px;
+  --radius-large: 24px;
   --radius-input: 6px;
   --radius-button: 12px;
   --radius-card: 24px;
   --radius-tag: 24px;
+
+  /* Pirsch section padding scale */
+  --padding-xs: 16px;
+  --padding-sm: 32px;
+  --padding-md: 64px;
+  --padding-lg: 128px;
+  --padding-xl: 192px;
 }
 
 @layer base {
@@ -68,19 +46,60 @@
     font-family: var(--font-dm-sans);
     font-size: 16px;
     line-height: 1.5;
-    letter-spacing: -0.016px;
   }
 
   * {
     box-sizing: border-box;
   }
 
-  /* Reduced motion: disable all transitions and animations */
   @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after {
       animation-duration: 0.01ms !important;
       animation-iteration-count: 1 !important;
       transition-duration: 0.01ms !important;
     }
+  }
+}
+
+/* ── Pirsch-style gradient blob used in Hero ── */
+@layer utilities {
+  .gradient-blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.55;
+    pointer-events: none;
+  }
+
+  .gradient-blob-green {
+    background: radial-gradient(circle, #6ece9d 0%, transparent 70%);
+  }
+
+  .gradient-blob-yellow {
+    background: radial-gradient(circle, #ffda6e 0%, transparent 70%);
+  }
+
+  /* Numbered section label — Pirsch style */
+  .nummeration {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #707070;
+  }
+
+  .nummeration .num {
+    font-size: 11px;
+    font-weight: 500;
+    color: #707070;
+  }
+
+  /* Logo marquee mask */
+  .marquee-mask {
+    mask-image: linear-gradient(to right, rgba(0,0,0,0) 0, rgba(0,0,0,1) 10%, rgba(0,0,0,1) 90%, rgba(0,0,0,0) 100%);
+    -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,0) 0, rgba(0,0,0,1) 10%, rgba(0,0,0,1) 90%, rgba(0,0,0,0) 100%);
   }
 }

@@ -1,10 +1,8 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
-import { usePathname } from 'next/navigation'
 import { Menu, X } from 'lucide-react'
-import { Button } from '@/components/ui/Button'
 
 const navLinks = [
   { label: 'Services', href: '/services' },
@@ -15,86 +13,94 @@ const navLinks = [
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
-  const pathname = usePathname()
+  const navRef = useRef<HTMLElement>(null)
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 40)
-    }
-    window.addEventListener('scroll', handleScroll, { passive: true })
-    return () => window.removeEventListener('scroll', handleScroll)
+    const onScroll = () => setScrolled(window.scrollY > 16)
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
   }, [])
-
-  // Close mobile menu on route change
-  useEffect(() => {
-    setMobileOpen(false)
-  }, [pathname])
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      ref={navRef}
+      style={{ height: '88px' }}
+      className={`fixed top-0 left-0 right-0 z-50 flex items-center transition-all duration-200 ${
         scrolled
-          ? 'bg-ghostly-gray shadow-sm border-b border-[rgba(0,0,0,0.06)]'
+          ? 'bg-white border-b border-black/[0.06]'
           : 'bg-transparent'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+      <div className="w-full max-w-[1280px] mx-auto px-8 flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2 font-medium text-midnight-ink text-lg">
-          <span className="inline-block w-7 h-7 bg-sunbeam-yellow rounded-[8px]" aria-hidden="true" />
-          Tabs Consultants
+        <Link
+          href="/"
+          className="font-medium text-[18px] text-black tracking-tight select-none"
+        >
+          Tabs
+          <span className="text-leafy-green">.</span>
         </Link>
 
         {/* Desktop nav */}
-        <nav className="hidden md:flex items-center gap-8" aria-label="Main navigation">
-          {navLinks.map((link) => (
+        <nav className="hidden md:flex items-center gap-8" aria-label="Primary">
+          {navLinks.map((l) => (
             <Link
-              key={link.href}
-              href={link.href}
-              className={`text-base font-normal transition-colors duration-150 hover:text-midnight-ink ${
-                pathname.startsWith(link.href)
-                  ? 'text-midnight-ink font-medium'
-                  : 'text-muted-stone'
-              }`}
+              key={l.href}
+              href={l.href}
+              className="text-[15px] text-black/70 hover:text-black transition-colors duration-150"
             >
-              {link.label}
+              {l.label}
             </Link>
           ))}
         </nav>
 
         {/* Desktop CTA */}
-        <div className="hidden md:flex">
-          <Button href="/contact" variant="primary" size="sm">
-            Book a Free Call
-          </Button>
+        <div className="hidden md:flex items-center gap-3">
+          <Link
+            href="/contact"
+            className="text-[15px] text-black/70 hover:text-black transition-colors duration-150"
+          >
+            Sign In
+          </Link>
+          <Link
+            href="/contact"
+            className="inline-flex items-center justify-center bg-leafy-green text-black text-[15px] font-medium px-5 py-2.5 rounded-[12px] hover:bg-[#85d9ae] active:bg-[#5cb88a] transition-colors duration-150 select-none"
+          >
+            Get Started
+          </Link>
         </div>
 
-        {/* Mobile menu toggle */}
+        {/* Mobile hamburger */}
         <button
-          className="md:hidden p-2 cursor-pointer text-midnight-ink"
-          onClick={() => setMobileOpen((v) => !v)}
+          className="md:hidden p-2 -mr-2 rounded-[8px] hover:bg-black/[0.05] transition-colors"
           aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
           aria-expanded={mobileOpen}
+          onClick={() => setMobileOpen((v) => !v)}
         >
-          {mobileOpen ? <X size={22} /> : <Menu size={22} />}
+          {mobileOpen ? <X size={20} /> : <Menu size={20} />}
         </button>
       </div>
 
-      {/* Mobile menu */}
+      {/* Mobile drawer */}
       {mobileOpen && (
-        <div className="md:hidden bg-ghostly-gray border-t border-[rgba(0,0,0,0.06)] px-6 py-4 flex flex-col gap-4">
-          {navLinks.map((link) => (
+        <div className="md:hidden absolute top-[88px] left-0 right-0 bg-white border-b border-black/[0.06] px-8 py-6 flex flex-col gap-5">
+          {navLinks.map((l) => (
             <Link
-              key={link.href}
-              href={link.href}
-              className="text-base font-normal text-midnight-ink py-2"
+              key={l.href}
+              href={l.href}
+              className="text-[17px] text-black"
+              onClick={() => setMobileOpen(false)}
             >
-              {link.label}
+              {l.label}
             </Link>
           ))}
-          <Button href="/contact" variant="primary" size="sm" className="mt-2 w-full">
-            Book a Free Call
-          </Button>
+          <Link
+            href="/contact"
+            className="inline-flex items-center justify-center bg-leafy-green text-black text-[15px] font-medium px-5 py-3 rounded-[12px] mt-2"
+            onClick={() => setMobileOpen(false)}
+          >
+            Get Started
+          </Link>
         </div>
       )}
     </header>

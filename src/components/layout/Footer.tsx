@@ -1,51 +1,73 @@
 import Link from 'next/link'
 
-const serviceLinks = [
+const services = [
   { label: 'Accounting & Bookkeeping', href: '/services/accounting' },
   { label: 'Tax Planning & Filing', href: '/services/tax-planning' },
   { label: 'Fractional CFO', href: '/services/fractional-cfo' },
   { label: 'Financial Reporting', href: '/services/financial-reporting' },
-  { label: 'M&A Support', href: '/services/mergers-acquisitions' },
+  { label: 'Mergers & Acquisitions', href: '/services/mergers-acquisitions' },
   { label: 'Payroll Management', href: '/services/payroll' },
   { label: 'System Integration', href: '/services/system-integration' },
   { label: 'Business Advisory', href: '/services/advisory' },
 ]
 
-const companyLinks = [
+const company = [
   { label: 'About', href: '/about' },
   { label: 'Services', href: '/services' },
   { label: 'Contact', href: '/contact' },
+  { label: 'Book a Call', href: '/contact' },
 ]
 
 export function Footer() {
   return (
-    <footer className="bg-ghostly-gray border-t border-[rgba(0,0,0,0.08)] pt-16 pb-8">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+    <footer className="bg-beige border-t border-black/[0.07]">
+      <div className="max-w-[1280px] mx-auto px-8 pt-16 pb-10">
+        {/* Top row */}
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 pb-12 border-b border-black/[0.07]">
           {/* Brand */}
-          <div className="col-span-1">
-            <div className="flex items-center gap-2 font-medium text-midnight-ink text-lg mb-3">
-              <span className="inline-block w-7 h-7 bg-sunbeam-yellow rounded-[8px]" aria-hidden="true" />
-              Tabs Consultants
-            </div>
-            <p className="text-muted-stone text-sm leading-relaxed max-w-56">
-              Financial clarity for businesses that mean business. Remote-first consulting since 2017.
+          <div className="flex flex-col gap-5">
+            <Link href="/" className="font-medium text-[20px] text-black tracking-tight">
+              Tabs<span className="text-leafy-green">.</span>
+            </Link>
+            <p className="text-[14px] text-black/50 leading-[1.65] max-w-[220px]">
+              Remote-first financial consulting for construction, real estate, startups, and
+              growing enterprises.
             </p>
+            <p className="text-[13px] text-black/35">Founded 2017 · USA</p>
           </div>
 
-          {/* Services */}
-          <div>
-            <h3 className="text-sm font-medium text-midnight-ink mb-4 uppercase tracking-wide">
+          {/* Services col 1 */}
+          <div className="flex flex-col gap-4">
+            <span className="text-[11px] font-medium uppercase tracking-[0.08em] text-black/35">
               Services
-            </h3>
+            </span>
             <ul className="flex flex-col gap-2.5">
-              {serviceLinks.map((link) => (
-                <li key={link.href}>
+              {services.slice(0, 4).map((s) => (
+                <li key={s.href}>
                   <Link
-                    href={link.href}
-                    className="text-sm text-muted-stone hover:text-midnight-ink transition-colors duration-150"
+                    href={s.href}
+                    className="text-[14px] text-black/60 hover:text-black transition-colors duration-150"
                   >
-                    {link.label}
+                    {s.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Services col 2 */}
+          <div className="flex flex-col gap-4">
+            <span className="text-[11px] font-medium uppercase tracking-[0.08em] text-black/35">
+              &nbsp;
+            </span>
+            <ul className="flex flex-col gap-2.5">
+              {services.slice(4).map((s) => (
+                <li key={s.href}>
+                  <Link
+                    href={s.href}
+                    className="text-[14px] text-black/60 hover:text-black transition-colors duration-150"
+                  >
+                    {s.label}
                   </Link>
                 </li>
               ))}
@@ -53,47 +75,41 @@ export function Footer() {
           </div>
 
           {/* Company */}
-          <div>
-            <h3 className="text-sm font-medium text-midnight-ink mb-4 uppercase tracking-wide">
+          <div className="flex flex-col gap-4">
+            <span className="text-[11px] font-medium uppercase tracking-[0.08em] text-black/35">
               Company
-            </h3>
+            </span>
             <ul className="flex flex-col gap-2.5">
-              {companyLinks.map((link) => (
-                <li key={link.href}>
+              {company.map((c) => (
+                <li key={c.label}>
                   <Link
-                    href={link.href}
-                    className="text-sm text-muted-stone hover:text-midnight-ink transition-colors duration-150"
+                    href={c.href}
+                    className="text-[14px] text-black/60 hover:text-black transition-colors duration-150"
                   >
-                    {link.label}
+                    {c.label}
                   </Link>
                 </li>
               ))}
             </ul>
-          </div>
-
-          {/* Contact */}
-          <div>
-            <h3 className="text-sm font-medium text-midnight-ink mb-4 uppercase tracking-wide">
-              Get in Touch
-            </h3>
-            <div className="flex flex-col gap-2.5">
+            <div className="mt-2 flex flex-col gap-1">
               <a
                 href="mailto:hello@tabsconsultants.com"
-                className="text-sm text-muted-stone hover:text-midnight-ink transition-colors duration-150"
+                className="text-[14px] text-black/60 hover:text-black transition-colors duration-150"
               >
                 hello@tabsconsultants.com
               </a>
-              <p className="text-sm text-muted-stone">Remote-first — serving clients nationwide</p>
             </div>
           </div>
         </div>
 
-        {/* Bottom bar */}
-        <div className="border-t border-[rgba(0,0,0,0.08)] pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-sm text-muted-stone">
-            &copy; {new Date().getFullYear()} Tabs Consultants. All rights reserved.
+        {/* Bottom row */}
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-8">
+          <p className="text-[13px] text-black/35">
+            © {new Date().getFullYear()} Tabs Consultants. All rights reserved.
           </p>
-          <p className="text-sm text-muted-stone">Founded 2017 &mdash; Remote-First Financial Consulting</p>
+          <p className="text-[13px] text-black/35">
+            Privacy-forward · Remote-first · No lock-in
+          </p>
         </div>
       </div>
     </footer>
