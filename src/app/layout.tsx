@@ -30,6 +30,32 @@ export const metadata: Metadata = {
   },
 }
 
+const organizationJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'AccountingService',
+  name: 'Tabs Consultants',
+  url: 'https://tabsconsultants.com',
+  foundingDate: '2017',
+  description:
+    'Remote-first financial consulting firm providing accounting, tax planning, fractional CFO, payroll, financial reporting, M&A support, system integration, and business advisory services.',
+  areaServed: 'US',
+  serviceType: [
+    'Accounting & Bookkeeping',
+    'Tax Planning & Filing',
+    'Fractional CFO',
+    'Financial Reporting & Forecasting',
+    'Mergers & Acquisitions',
+    'Payroll Management',
+    'System Integration',
+    'Business Advisory & Compliance',
+  ],
+  contactPoint: {
+    '@type': 'ContactPoint',
+    email: 'hello@tabsconsultants.com',
+    contactType: 'customer support',
+  },
+}
+
 export default function RootLayout({
   children,
 }: {
@@ -37,6 +63,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={dmSans.variable}>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+        />
+      </head>
       <body className="font-dm-sans bg-canvas text-midnight-ink antialiased">
         <Navbar />
         <main>{children}</main>
