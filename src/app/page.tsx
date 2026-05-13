@@ -15,9 +15,9 @@ export default function HomePage() {
   return (
     <>
       <Hero />
+      <Testimonials />
       <ContentSections />
       <FeatureCards />
-      <Testimonials />
       <Pricing />
       <CTABand />
     </>
