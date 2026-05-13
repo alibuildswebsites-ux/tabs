@@ -92,7 +92,7 @@ export function FeatureCards() {
         <div className="flex flex-col md:flex-row md:items-end gap-6 md:justify-between">
           <div className="flex flex-col gap-4 max-w-xl">
             <div className="nummeration">
-              <span className="num">06</span>
+              <span className="num">07</span>
               <span className="w-4 h-px bg-black/20 inline-block" />
               <span>GOOD COMPANY</span>
             </div>

@@ -6,7 +6,7 @@ import { ArrowRight, BookOpen, Calculator, TrendingUp, Users, Settings } from 'l
 
 const sections = [
   {
-    num: '01',
+    num: '02',
     tag: 'EASY START',
     headline: 'Set Up Your Financial Foundation in Days',
     body: 'We plug into your existing accounts, tools, and workflows — then take it from there. No lengthy onboarding. No painful migrations. Just accurate books from day one.',
@@ -16,7 +16,7 @@ const sections = [
     features: ['Bank sync & reconciliation', 'QuickBooks / Xero setup', 'Chart of accounts review', 'First-month clean-up'],
   },
   {
-    num: '02',
+    num: '03',
     tag: 'INSTANT OUTPUT',
     headline: 'Unlock Key Insights From Your Numbers',
     body: 'Stop guessing and start knowing. Our financial reports turn raw data into clear, plain-language summaries that tell you exactly where your business stands — and where it is going.',
@@ -26,7 +26,7 @@ const sections = [
     features: ['Monthly P&L + balance sheet', 'Rolling 13-week cash flow', 'KPI dashboard', 'Scenario modeling'],
   },
   {
-    num: '03',
+    num: '04',
     tag: 'ADVANCED STRATEGY',
     headline: 'Plan Smarter With a CFO on Your Side',
     body: 'Get CFO-level strategic guidance without the full-time cost. We bring financial leadership to your board meetings, fundraises, and growth decisions — exactly when you need it.',
@@ -36,7 +36,7 @@ const sections = [
     features: ['Financial strategy & KPIs', 'Investor reporting', 'Cash flow management', 'Fundraising support'],
   },
   {
-    num: '04',
+    num: '05',
     tag: 'SMART TEAMWORK',
     headline: 'Empower Your Business With Compliance',
     body: 'Stay compliant, reduce risk, and make bold decisions backed by expert guidance. Our advisory services keep you ahead of regulation changes and positioned for what comes next.',
@@ -46,7 +46,7 @@ const sections = [
     features: ['Regulatory compliance', 'Entity structure review', 'On-call advisory access', 'Growth planning'],
   },
   {
-    num: '05',
+    num: '06',
     tag: 'CREATIVE FREEDOM',
     headline: 'Financial Systems That Work the Way You Do',
     body: 'We connect your tools, automate your workflows, and eliminate the manual work slowing your team down. Your stack, optimised — so your finance team can focus on what matters.',
