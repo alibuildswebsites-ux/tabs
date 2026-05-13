@@ -35,7 +35,7 @@ export function AboutHero() {
 
         <h1
           data-about-hero-item
-          className="text-5xl md:text-[64px] font-medium leading-[1.2] tracking-[-0.016px] text-midnight-ink"
+          className="text-heading-sm md:text-heading lg:text-display font-medium leading-display tracking-display text-midnight-ink"
         >
           Financial Expertise, <br className="hidden md:block" />
           Built for Growth
@@ -43,7 +43,7 @@ export function AboutHero() {
 
         <p
           data-about-hero-item
-          className="text-lg md:text-xl text-muted-stone max-w-2xl leading-relaxed"
+          className="text-body md:text-body-lg text-muted-stone max-w-2xl leading-body-lg tracking-body-lg"
         >
           Tabs Consultants is a remote-first financial consulting firm dedicated to helping
           construction companies, real estate investors, startups, and growing enterprises build

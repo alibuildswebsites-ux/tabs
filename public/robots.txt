@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://tabsconsultants.com
+
+# Sitemaps
+Sitemap: https://tabsconsultants.com/sitemap.xml

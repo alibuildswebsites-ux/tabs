@@ -16,6 +16,25 @@
   --font-dm-sans: 'DM Sans', Roboto, -apple-system, system-ui, BlinkMacSystemFont,
     'Segoe UI', Helvetica, Arial, sans-serif;
 
+  --text-body: 16px;
+  --leading-body: 1.5;
+  --tracking-body: -0.016px;
+  --text-body-lg: 18px;
+  --leading-body-lg: 1.5;
+  --tracking-body-lg: -0.016px;
+  --text-subheading: 20px;
+  --leading-subheading: 1.25;
+  --tracking-subheading: -0.016px;
+  --text-heading-sm: 24px;
+  --leading-heading-sm: 1.25;
+  --tracking-heading-sm: -0.016px;
+  --text-heading: 28px;
+  --leading-heading: 1.25;
+  --tracking-heading: -0.016px;
+  --text-display: 64px;
+  --leading-display: 1.25;
+  --tracking-display: -0.016px;
+
   /* Border radius — exact Pirsch values */
   --radius-small: 6px;
   --radius-medium: 12px;

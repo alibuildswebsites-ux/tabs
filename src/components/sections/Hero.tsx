@@ -1,8 +1,8 @@
 'use client'
 
 import { useEffect, useRef } from 'react'
-import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
+import { Button } from '@/components/ui/Button'
 
 /* Industry/client "logo" placeholders — styled as text wordmarks */
 const logos = [
@@ -81,38 +81,40 @@ export function Hero() {
           Financial Consulting Since 2017 · Remote-First
         </div>
 
-        {/* H1 — Pirsch uses ~96px on desktop */}
+        {/* H1 — Pirsch uses ~96px on desktop, but we follow design.md 64px display or slightly larger for hero impact but balanced */}
         <h1
           data-hero-item
-          className="text-[56px] md:text-[80px] lg:text-[96px] font-medium leading-[1.05] tracking-[-2px] text-black max-w-4xl"
+          className="text-heading-sm md:text-heading lg:text-display font-medium leading-display tracking-display text-midnight-ink max-w-4xl"
         >
-          Financial Clarity for Businesses That Mean Business
+          Master Your Numbers, Scale Your Business
         </h1>
 
         {/* Subhead */}
         <p
           data-hero-item
-          className="text-[18px] md:text-[20px] text-black/60 max-w-xl leading-[1.55]"
+          className="text-body md:text-body-lg text-muted-stone max-w-xl leading-body-lg tracking-body-lg"
         >
-          Expert accounting, tax planning, CFO guidance, and business advisory — built for
-          construction, real estate, startups, and growing enterprises.
+          Expert accounting, tax strategy, and fractional CFO guidance built specifically for
+          construction, real estate, and high-growth startups.
         </p>
 
         {/* CTA row */}
         <div data-hero-item className="flex flex-col sm:flex-row items-center gap-3 mt-2">
-          <Link
+          <Button
             href="/contact"
-            className="inline-flex items-center gap-2 bg-leafy-green text-black font-medium text-[16px] px-7 py-3.5 rounded-[12px] hover:bg-[#85d9ae] active:bg-[#5cb88a] transition-colors duration-150 select-none"
+            variant="primary"
+            className="gap-2"
           >
             Book a Free Call
             <ArrowRight size={16} strokeWidth={2} />
-          </Link>
-          <Link
+          </Button>
+          <Button
             href="/services"
-            className="inline-flex items-center gap-2 bg-transparent border border-black/20 text-black font-medium text-[16px] px-7 py-3.5 rounded-[12px] hover:bg-black/[0.04] transition-colors duration-150 select-none"
+            variant="outline"
+            className="gap-2"
           >
             Explore Services
-          </Link>
+          </Button>
         </div>
 
         {/* Social proof line */}
@@ -138,11 +140,11 @@ export function Hero() {
               <div className="w-20 h-5 rounded-full bg-black/[0.05]" />
             </div>
             {/* Fake chart grid */}
-            <div className="grid grid-cols-4 gap-3 mt-2">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mt-2">
               {[
                 { label: 'Monthly Revenue', value: '$284,500', color: 'bg-leafy-green', pct: '78%' },
                 { label: 'Net Profit', value: '$61,200', color: 'bg-sunbeam-yellow', pct: '62%' },
-                { label: 'Cash on Hand', value: '$142,800', color: 'bg-orange', pct: '45%' },
+                { label: 'Cash on Hand', value: '$142,800', color: 'bg-sunbeam-yellow', pct: '45%' },
                 { label: 'Outstanding AR', value: '$38,400', color: 'bg-red-soft', pct: '28%' },
               ].map((stat) => (
                 <div key={stat.label} className="bg-white rounded-[16px] p-4 flex flex-col gap-3">
@@ -165,9 +167,9 @@ export function Hero() {
                 <span className="text-[12px] text-black/40 font-medium uppercase tracking-wide">Revenue vs. Expenses — 2024</span>
                 <span className="text-[11px] text-leafy-green font-medium">↑ 24% YoY</span>
               </div>
-              <div className="flex items-end gap-2 h-[80px]">
+              <div className="flex items-end gap-1.5 md:gap-2 h-[80px]">
                 {[55, 72, 65, 80, 58, 90, 76, 88, 95, 82, 100, 97].map((h, i) => (
-                  <div key={i} className="flex-1 flex flex-col gap-1 items-center justify-end h-full">
+                  <div key={i} className={`flex-1 flex flex-col gap-1 items-center justify-end h-full ${i > 5 ? 'hidden sm:flex' : 'flex'}`}>
                     <div
                       className="w-full rounded-t-[4px] bg-leafy-green opacity-80"
                       style={{ height: `${h}%` }}
@@ -176,8 +178,8 @@ export function Hero() {
                 ))}
               </div>
               <div className="flex justify-between">
-                {['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'].map(m => (
-                  <span key={m} className="text-[10px] text-black/25 flex-1 text-center">{m}</span>
+                {['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'].map((m, i) => (
+                  <span key={m} className={`text-[10px] text-black/25 flex-1 text-center ${i > 5 ? 'hidden sm:inline' : 'inline'}`}>{m}</span>
                 ))}
               </div>
             </div>

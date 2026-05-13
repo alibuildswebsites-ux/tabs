@@ -30,7 +30,7 @@ const sections = [
     tag: 'ADVANCED STRATEGY',
     headline: 'Plan Smarter With a CFO on Your Side',
     body: 'Get CFO-level strategic guidance without the full-time cost. We bring financial leadership to your board meetings, fundraises, and growth decisions — exactly when you need it.',
-    color: 'bg-orange',
+    color: 'bg-sunbeam-yellow',
     icon: Calculator,
     cta: { label: 'Fractional CFO', href: '/services/fractional-cfo' },
     features: ['Financial strategy & KPIs', 'Investor reporting', 'Cash flow management', 'Fundraising support'],
@@ -138,7 +138,7 @@ export function ContentSections() {
           <section
             key={s.num}
             ref={(el) => { refs.current[i] = el }}
-            className="py-32 px-8 border-t border-black/[0.06]"
+            className="py-16 md:py-24 px-8 border-t border-black/[0.06]"
           >
             <div className="max-w-[1280px] mx-auto">
               <div
@@ -157,12 +157,12 @@ export function ContentSections() {
 
                   <h2
                     data-content-item
-                    className="text-[36px] md:text-[48px] font-medium text-black leading-[1.1] tracking-[-1px]"
+                    className="text-heading-sm md:text-heading font-medium text-midnight-ink leading-heading tracking-heading"
                   >
                     {s.headline}
                   </h2>
 
-                  <p data-content-item className="text-[17px] text-black/60 leading-[1.6] max-w-md">
+                  <p data-content-item className="text-body text-muted-stone leading-body tracking-body max-w-md">
                     {s.body}
                   </p>
 

@@ -90,9 +90,9 @@ export function Pricing() {
   return (
     <section
       ref={sectionRef}
-      className="py-32 px-8 bg-beige border-t border-black/[0.06]"
+      className="py-16 md:py-24 px-8 bg-beige border-t border-black/[0.06]"
     >
-      <div className="max-w-[1280px] mx-auto flex flex-col gap-16">
+      <div className="max-w-[1280px] mx-auto flex flex-col gap-12">
         {/* Header */}
         <div className="flex flex-col gap-4">
           <div className="nummeration">
@@ -101,10 +101,10 @@ export function Pricing() {
             <span>PRICING</span>
           </div>
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
-            <h2 className="text-[40px] md:text-[52px] font-medium text-black leading-[1.1] tracking-[-1px]">
+            <h2 className="text-heading-sm md:text-heading font-medium text-midnight-ink leading-heading tracking-heading">
               Simple, Transparent Pricing
             </h2>
-            <p className="text-[16px] text-black/50 max-w-xs md:text-right leading-relaxed">
+            <p className="text-body text-muted-stone max-w-xs md:text-right leading-body tracking-body">
               No hidden fees. No surprise invoices. Cancel anytime.
             </p>
           </div>
@@ -153,8 +153,8 @@ export function Pricing() {
                 href={p.cta.href}
                 className={`inline-flex items-center justify-center gap-2 text-[15px] font-medium px-6 py-3 rounded-[12px] transition-all duration-150 select-none group ${
                   p.highlight
-                    ? 'bg-black text-white hover:bg-black/80'
-                    : 'bg-white text-black border border-black/12 hover:border-black/25'
+                    ? 'bg-midnight-ink text-white hover:bg-midnight-ink/90'
+                    : 'bg-white text-midnight-ink border border-midnight-ink/12 hover:border-midnight-ink/25'
                 }`}
               >
                 {p.cta.label}
