@@ -139,7 +139,7 @@ export function Testimonials() {
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
           <div className="flex flex-col gap-4">
             <div className="nummeration">
-              <span className="num">07</span>
+              <span className="num">01</span>
               <span className="w-4 h-px bg-black/20 inline-block" />
               <span>HAPPY CLIENTS</span>
             </div>

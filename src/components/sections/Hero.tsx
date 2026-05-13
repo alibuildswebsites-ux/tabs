@@ -136,7 +136,6 @@ export function Hero() {
                 <div className="w-3 h-3 rounded-full bg-black/10" />
                 <div className="w-3 h-3 rounded-full bg-black/10" />
               </div>
-              <span className="text-[12px] text-black/30 font-medium">Financial Dashboard · Tabs Consultants</span>
               <div className="w-20 h-5 rounded-full bg-black/[0.05]" />
             </div>
             {/* Fake chart grid */}
