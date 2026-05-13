@@ -104,11 +104,21 @@ export function Footer() {
         </div>
 
         {/* Bottom row */}
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-8">
-          <p className="text-[13px] text-black/35">
+        <div className="grid grid-cols-1 sm:grid-cols-3 items-center gap-4 pt-8">
+          <p className="text-[13px] text-black/35 text-center sm:text-left">
             © {new Date().getFullYear()} Tabs Consultants. All rights reserved.
           </p>
-          <p className="text-[13px] text-black/35">
+          <div className="text-center">
+            <a
+              href="https://alibuildswebsites.me"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[13px] text-black/35 hover:text-black transition-colors duration-150"
+            >
+              Built by alibuildswebsites
+            </a>
+          </div>
+          <p className="text-[13px] text-black/35 text-center sm:text-right">
             Privacy-forward · Remote-first · No lock-in
           </p>
         </div>
