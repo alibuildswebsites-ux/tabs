@@ -163,7 +163,7 @@ export function Hero() {
             {/* Fake bar chart */}
             <div className="bg-white rounded-[16px] p-5 flex flex-col gap-3">
               <div className="flex items-center justify-between">
-                <span className="text-[12px] text-black/40 font-medium uppercase tracking-wide">Revenue vs. Expenses — 2024</span>
+                <span className="text-[12px] text-black/40 font-medium uppercase tracking-wide">Revenue vs. Expenses — 2025</span>
                 <span className="text-[11px] text-leafy-green font-medium">↑ 24% YoY</span>
               </div>
               <div className="flex items-end gap-1.5 md:gap-2 h-[80px]">
